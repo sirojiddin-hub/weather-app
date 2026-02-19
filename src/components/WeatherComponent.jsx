@@ -27,14 +27,16 @@ class WeatherComponent extends Component {
                     weather: response.data,
                 });
                 console.log(response.data)
-                toast.success('succes')
+                toast.success('Success')
             })
             .catch(() =>{
                 toast.error('error')
                 });
-
-
-
+    }
+    handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            this.SearchCity();
+        }
     }
     render() {
         const {weather} = this.state;
@@ -44,7 +46,7 @@ class WeatherComponent extends Component {
 
                     {/* 1. Qidiruv qismi */}
                     <div className="search">
-                        <input ref={this.searchInput} type="text" placeholder="enter city name" spellCheck="false" />
+                        <input onKeyDown={this.handleKeyDown} ref={this.searchInput} type="text" placeholder="enter city name" spellCheck="false" />
                         <button onClick={this.SearchCity}>
                             <FaSearch />
                         </button>

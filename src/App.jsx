@@ -37,6 +37,7 @@ class App extends Component {
 
         return (
             <div className="container my-5">
+
                 {/*<h1>App jsx </h1>*/}
                 {/*/!*<NavBar/>*!/*/}
                 {/*/!*<Header/>*!/*/}
